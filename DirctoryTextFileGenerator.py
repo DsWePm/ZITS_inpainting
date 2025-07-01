@@ -32,7 +32,7 @@ def textFileGenerator(data_path, output_path):
                 if file.lower().endswith(('.jpg', '.png')): # Check if image file
                     
                     file_path = os.path.join(root, file) # Full file path
-                    # relative_path = os.path.relpath(file_path, data_path)
+
                     relative_path = os.path.relpath(file_path, project_root) # Get relative path
                     relative_path = relative_path.replace('\\', '/')
                     
