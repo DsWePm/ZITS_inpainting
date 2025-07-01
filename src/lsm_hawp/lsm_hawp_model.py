@@ -86,7 +86,8 @@ class LSM_HAWP:
                             scores.append(score)
                 wireframe_info = {'lines': lines, 'scores': scores}
 
-                os.mkdir(img_path) # fixed no img_path directory error
+                if not os.path.exists(img_path): # fixed no img_path directory error
+                    os.mkdir(img_path)
                 with open(os.path.join(output_path, img_path.split('/')[-1].split('.')[0] + '.pkl'), 'wb') as w:
                     pickle.dump(wireframe_info, w)
 
